@@ -13,7 +13,9 @@ cloudinary.config({
 
 // Multer configuration (remove the 'dest' option to prevent saving to a local folder)
 const upload = multer();
-
+app.get("/", (req, res) => {
+    res.send("hello world")
+})
 // Define a route for handling image uploads
 app.post("/upload", upload.single('image'), async (req, res) => {
     try {
